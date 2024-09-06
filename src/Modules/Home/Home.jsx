@@ -4,28 +4,20 @@ import Products from "../../assets/Components/Products/Products";
 import Feature from "../../assets/Feature/Feature";
 import Footer from "../../assets/Components/Footer/Footer";
 import Categories from "../../assets/Components/Categories/Categories";
-import axios from "axios";
 
 const Home = () => {
   const [products, setProducts] = useState([]);
+  const limit = 10;
+  const activePage = 1;
 
   useEffect(() => {
     const fetchProducts = async () => {
-      try {
-        const response = await fetch(
-          "https://fakestoreapi.com/products?limit=10"
-        );
-
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-
-        const data = await response.json();
-        console.log(data);
-        setProducts(data);
-      } catch (error) {
-        console.error("Error fetching products:", error);
-      }
+      const response = await fetch(
+        `https://fakestoreapi.in/api/products?limit=10`
+      );
+      const data = await response.json();
+      console.log(data, "data");
+      setProducts(data);
     };
     fetchProducts();
   }, []);
