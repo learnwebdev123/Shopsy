@@ -9,31 +9,23 @@ import axios from "axios";
 const Home = () => {
   const [products, setProducts] = useState([]);
 
-  // useEffect(() => {
-  //   const fetchProducts = async () => {
-  //     try {
-  //       const response = await axios.get(
-  //         "https://fakestoreapi.com/products?limit=10"
-  //       );
-  //       const data = response.data;
-  //       console.log(data, "data");
-  //       setProducts(data);
-  //     } catch (error) {
-  //       console.error("Error fetching data:", error);
-  //     }
-  //   };
-
-  //   fetchProducts();
-  // }, []);
-
   useEffect(() => {
     const fetchProducts = async () => {
-      const response = await fetch(
-        `https://fakestoreapi.com/products?limit=10`
-      );
-      const data = await response.json();
-      console.log(data, "data");
-      setProducts(data);
+      try {
+        const response = await fetch(
+          "https://fakestoreapi.com/products?limit=10"
+        );
+
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        console.log(data);
+        setProducts(data);
+      } catch (error) {
+        console.error("Error fetching products:", error);
+      }
     };
     fetchProducts();
   }, []);
