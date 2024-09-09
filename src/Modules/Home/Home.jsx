@@ -11,7 +11,7 @@ const Home = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       const response = await fetch(
-        `https://fakestoreapi.com/products?limit=16`
+        `https://fakestoreapi.com/products?limit=10`
       );
       const data = await response.json();
       console.log(data, "data");
