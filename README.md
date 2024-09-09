@@ -10,14 +10,14 @@ Remove from Cart <br />
 Checkout <br />
 Responsive Design <br />
 
-Tech Stack
-React.js
-Tailwind CSS
-Fakestore API
-React Router
-React Icons
+Tech Stack <br />
+React.js <br />
+Tailwind CSS <br />
+Fakestore API <br />
+React Router <br />
+React Icons <br />
 
-Sample WebPage
+Sample WebPage of Shopsy <br />
 
 <img width="1671" alt="Home" src="https://github.com/user-attachments/assets/7d9e9ad6-8b25-4e34-bd4b-0e59e04b3bbf">
 <img width="1653" alt="Products" src="https://github.com/user-attachments/assets/08d9d21c-d20a-4c32-989f-3a09e238f575">
